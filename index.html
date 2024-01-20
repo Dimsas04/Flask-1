@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
+</head>
+<body>
+    <header>ANNOUNCEMENTS</header>
+    
+    <main>
+        {% for announcement in ANNOUNCEMENTS %}
+            <div id="info_box">
+                    <div>
+                        <h1>
+                            {{announcement.announcer}}
+                        </h1>
+                    </div>
+                    <div>
+                        <h2>
+                            On {{announcement.date}} at {{announcement.time}}
+                        </h2>
+                    </div>
+                <div id="post_box">
+                    <h3>
+                        {{announcement.text}}
+                    </h3>
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+    
+</body>
+
+<script src="great.js"></script>
+</html>
